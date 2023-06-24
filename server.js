@@ -7,8 +7,8 @@ const redis = new Redis('redis://red-ci6l9mp8g3nfucbohhu0:6379');
 
 app.use(express.json()); // Enable JSON request body parsing
 
-var whitelist = ['https://work4u.onrender.com', 'http://localhost:8000']
-var corsOptions = {
+const whitelist = ['https://work4u.onrender.com', 'http://localhost:3000']
+const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
