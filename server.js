@@ -21,7 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // client.set('usernames', JSON.stringify(['22']));
-client.set('passwords', JSON.stringify({'22': '22'}));
+client.set('credentials', JSON.stringify({'22': '22'}));
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
