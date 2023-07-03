@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const redis = new Redis('redis://red-ci6l9mp8g3nfucbohhu0:6379');
+const client = redis.createClient();
 
 app.use(express.json()); // Enable JSON request body parsing
 
@@ -20,7 +21,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// client.set('usernames', JSON.stringify(['22']));
 client.set('credentials', JSON.stringify({'22': '22'}));
 
 app.post('/login', (req, res) => {
